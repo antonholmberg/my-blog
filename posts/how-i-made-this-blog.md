@@ -57,11 +57,31 @@ once again the [filesystem](https://www.gatsbyjs.org/packages/gatsby-source-file
 
 To add the file system plugin I ran:
 
-`npm install gatsby-source-filesystem`
+```bash
+npm install gatsby-source-filesystem
+```
 
 add added:
 
-`gist:antonholmberg/e272f56992defb4e865dd903463297d5`
+```javascript
+module.exports = {
+  siteMetadata: {
+    title: 'Gatsby Default Starter',
+    description:
+      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    author: '@gatsbyjs',
+  },
+  plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/posts`,
+      },
+    },
+  ],
+};
+```
 
 So everything I put in the `posts` directory will be sourced by the plugin.
 
@@ -73,17 +93,41 @@ A query that fetched all the files currently sourced by the
 [filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/) plugin
 you can run:
 
-`gist:antonholmberg/1290b690717ec870db9c93208cf8134c`
+```graphql
+query {
+  allFile {
+    edges {
+      node {
+        id
+        name
+        sourceInstanceName
+      }
+    }
+  }
+}
+```
 
 The response from this is for me, as of writing this:
 
-`gist:antonholmberg/37d1afe845a6444b866829b5b390278d`
+```json
+{
+  "data": {
+    "allFile": {
+      "edges": [
+        {
+          "node": {
+            "id": "dcd6f52b-2293-577f-abc7-d317aa5ebfde",
+            "name": "how-i-made-this-blog",
+            "sourceInstanceName": "posts"
+          }
+        }
+      ]
+    }
+  }
+}
+```
 
 ### Transformers
-
-<div style="margin: 2rem auto; max-width: 480px;">
-<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/10AP6GswZpOA4o" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-</div>
 
 So gatsby has a multitude of _transformers_. What _transformers_ do is to take the
 content that the _source_ plugins load and transform them in some way.
@@ -94,18 +138,97 @@ write and transforms it in to HTML to be displayed in the blog.
 
 I installed the plugin with:
 
-`npm install gatsby-transformer-remark`
+```bash
+npm install gatsby-transformer-remark
+```
 
 and configured it with:
 
-`gist:antonholmberg/374a21ede41ce5eb34b76dbfbbba22ac`
+```javascript
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [],
+      },
+    },
+  ],
+};
+```
 
 Now when I run this graphql query:
 
-`gist:antonholmberg/b8097cb08a5ec4663a7b48f92ffc7032`
+```graphql
+query {
+  allMarkdownRemark {
+    edges {
+      node {
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+}
+```
 
 I get back:
 
-`gist:antonholmberg/81655fe69cf947ab2d2ada57b62a728f`
+```json
+{
+  "data": {
+    "allMarkdownRemark": {
+      "edges": [
+        {
+          "node": {
+            "frontmatter": {
+              "title": "How I Made This Blog"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+To also receive the full formatted html of a post you query for:
+
+```graphql
+query {
+  allMarkdownRemark {
+    edges {
+      node {
+        html
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+}
+```
+
+And yo will get back
+
+```json
+{
+  "data": {
+    "allMarkdownRemark": {
+      "edges": [
+        {
+          "node": {
+            "html": "<THE HTML>",
+            "frontmatter": {
+              "title": "How I Made This Blog"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
 
 ### Generating Pages From Sources
