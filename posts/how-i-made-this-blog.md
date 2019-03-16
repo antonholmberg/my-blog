@@ -257,6 +257,6 @@ And yo will get back:
 
 So now that we can create pages and query data. The next question becomes
 how do we add a page for each of the posts? This is done by editing the
-**gatsby-node.js** file. In this file you can export a function called _createPages_
-this method will be called by gatsby at _compile time_ and here you can dynamically add
+**gatsby-node.js** file. In this file you can export a function called _createPages_.
+This method will be called by gatsby at _compile time_ and here you can dynamically add
 new pages from the data that was pulled in by the sources.
