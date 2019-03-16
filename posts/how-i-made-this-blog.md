@@ -45,14 +45,36 @@ local files are managed at compile time and not at _run time_. The thing that I 
 really understand at first was that even if the source was an API, **the data was still
 fetched at _compile time_**.
 
+### Pages
+
+Okay so lets talk basics here. Pages are the most basic elements in
+[Gatsby.js](https://www.gatsbyjs.org/). When you create an app with the hello world
+starter pack you will only have one page, the **index.js** page. This page it the one that the
+user lands on. Another path will be added for each _page_ that you add in the _pages_ folder.
+
+Let say that I add an about page. [Gatsby.js](https://www.gatsbyjs.org/) will add a path for
+**/about**. If you want to link to the page you can add a link on the _index_ page to
+**/about**.
+
+```javascript
+import { Link } from 'gatsby';
+
+const Index = () => (
+  <div>
+    ...
+    <Link to="/about">About</Link>
+  </div>
+);
+```
+
 ### GraphQL
 
 So before making this blog I had never really worked with GraphQL on a "_real_" project.
 I had played around with [GraphiQL](https://github.com/graphql/graphiql) but that was about
 all I knew.
 
-So like I mentioned Gatsby pulls data from your _sources_ at _compile time_. Once this is done
-It exposes this data though GraphQL. I found that the easiest one to wrap my head around was
+As I mentioned Gatsby pulls data from your _sources_ at _compile time_. Once this is done
+it exposes this data though GraphQL. I found that the easiest one to wrap my head around was
 once again the [filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/).
 
 To add the file system plugin I ran:
@@ -210,7 +232,7 @@ query {
 }
 ```
 
-And yo will get back
+And yo will get back:
 
 ```json
 {
@@ -232,3 +254,9 @@ And yo will get back
 ```
 
 ### Generating Pages From Sources
+
+So now that we can create pages and query data. The next question becomes
+how do we add a page for each of the posts? This is done by editing the
+**gatsby-node.js** file. In this file you can export a function called _createPages_
+this method will be called by gatsby at _compile time_ and here you can dynamically add
+new pages from the data that was pulled in by the sources.
