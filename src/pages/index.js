@@ -1,21 +1,46 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import PostItem from '../components/PostItem';
 
-const IndexPage = () => (
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    {edges.map(edge => (
+      <PostItem
+        title={edge.node.frontmatter.title}
+        path={edge.node.frontmatter.path}
+        preview={edge.node.excerpt}
+      />
+    ))}
   </Layout>
-)
+);
 
-export default IndexPage
+IndexPage.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired,
+};
+
+export const pageQuery = graphql`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          html
+          excerpt(pruneLength: 200)
+          frontmatter {
+            title
+            path
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default IndexPage;
