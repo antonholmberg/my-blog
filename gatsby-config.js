@@ -18,7 +18,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'cats',
-        path: path.join(__dirname, 'images', 'cats'),
+        path: path.join(__dirname, 'cats'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'images'),
       },
     },
     'gatsby-plugin-styled-components',

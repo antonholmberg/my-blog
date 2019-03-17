@@ -1,19 +1,35 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Header from './Header';
+import Footer from './Footer';
+import CenteredContent from './CenteredContent';
 
-const Content = styled.div`
-  margin: 0 auto;
-  padding: 1rem;
-  max-width: 960px;
+const Root = styled.div`
+  position: relative;
+  min-height: 100vh;
+  ::after {
+    display: block;
+    content: '';
+    height: 6rem;
+  }
 `;
 
 const Layout = ({ children }) => (
-  <div>
+  <Root>
+    <Helmet>
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossOrigin="anonymous"
+      />
+    </Helmet>
     <Header siteTitle="Anton Holmberg" />
-    <Content>{children}</Content>
-  </div>
+    <CenteredContent>{children}</CenteredContent>
+    <Footer />
+  </Root>
 );
 
 Layout.propTypes = {
