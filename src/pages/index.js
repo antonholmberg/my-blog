@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import PostItem from '../components/PostItem';
-import RoundedImage from '../components/RoundedImage';
 
 const Introduction = styled.div`
   display: flex;
@@ -28,6 +28,10 @@ const ImageContainer = styled.div`
   margin-right: 1rem;
 `;
 
+const CircularImage = styled(Img)`
+  border-radius: 50%;
+`;
+
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
@@ -40,7 +44,7 @@ const IndexPage = ({
     </Helmet>
     <Introduction>
       <ImageContainer>
-        <RoundedImage fixed={profilePicture.childImageSharp.fixed} />
+        <CircularImage fixed={profilePicture.childImageSharp.fixed} />
       </ImageContainer>
       <Bio>
         <h4>I am Anton Holmberg</h4>
