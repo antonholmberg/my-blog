@@ -1,16 +1,11 @@
 const path = require('path');
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
-
+exports.createPages = ({ actions: { createPage }, graphql }) => {
   const blogPostTemplate = path.resolve('src/templates/Post.js');
 
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             frontmatter {

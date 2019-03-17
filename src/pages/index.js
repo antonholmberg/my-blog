@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
+import { Helmet } from 'react-helmet';
+import Layout from '../components/Layout';
 import PostItem from '../components/PostItem';
 
 const IndexPage = ({
@@ -11,6 +12,9 @@ const IndexPage = ({
   },
 }) => (
   <Layout>
+    <Helmet>
+      <title>Anton Holmberg</title>
+    </Helmet>
     {edges.map(edge => (
       <PostItem
         title={edge.node.frontmatter.title}
