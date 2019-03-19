@@ -9,7 +9,7 @@ been a blast to make and the fact that I could reuse my react skills made me
 feel like I am in control.
 
 There were however some things that took some time to sink in. So I though it might
-be nice to create post about the concepts that were hard for me to grasp.
+be nice to create a post about the concepts that were hard for me to grasp.
 
 I started out this blog post thinking it would be more or less a step by step guide of
 how the Blog was made. But to be fair there are a lot of these guides out there and most
