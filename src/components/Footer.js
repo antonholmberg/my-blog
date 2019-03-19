@@ -22,15 +22,11 @@ const Content = styled(CenteredContent)`
 `;
 
 const LinkContainer = styled.div`
-  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
-
-  @media (min-width: 36em) {
-    align-self: flex-start;
-  }
+  align-self: flex-start;
 `;
 
 const SocialMediaIcon = styled.i`
