@@ -19,30 +19,42 @@ const ImageContainer = styled.div`
 
 const NotFoundPage = ({ data }) => {
   const [imageIndex, setImageIndex] = useState(0);
-  const [imageOpacity, setImageOpacity] = useState(1.0);
+  const [imageOpacity, setImageOpacity] = useState(0.0);
 
   const {
     allFile: { edges },
   } = data;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setImageOpacity(0.0);
-      setTimeout(() => {
-        setImageOpacity(1.0);
-        let randomIndex;
-        do {
-          randomIndex = Math.floor(Math.random() * edges.length);
-        } while (randomIndex === imageIndex);
+    let timeout = null;
 
+    if (imageOpacity === 0) {
+      let randomIndex = 0;
+      do {
+        randomIndex = Math.floor(Math.random() * edges.length);
+      } while (randomIndex === imageIndex);
+      timeout = setTimeout(() => {
         setImageIndex(randomIndex);
       }, fadeTime);
-    }, showTime);
+    } else {
+      timeout = setTimeout(() => setImageOpacity(0.0), showTime);
+    }
 
     return () => {
-      clearInterval(interval);
+      clearTimeout(timeout);
     };
-  });
+  }, [imageOpacity]);
+
+  useEffect(() => {
+    let timeout = null;
+    if (imageOpacity === 0.0) {
+      timeout = setTimeout(() => setImageOpacity(1.0), fadeTime);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [imageIndex]);
 
   return (
     <Layout>
