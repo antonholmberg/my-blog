@@ -6,7 +6,7 @@ title: 'How I Made This Blog'
 
 This blog was made with [Gatsby.js](https://www.gatsbyjs.org/). Over all it has
 been a blast to make and the fact that I could reuse my react skills made me
-feel like i am in controll.
+feel like I am in control.
 
 There were however some things that took some time to sink in. So I though it might
 be nice to create post about the concepts that were hard for me to grasp.
@@ -21,7 +21,7 @@ would much rather refer you to those:
 
 ### Initial Starter Pack
 
-So one of the tings I wish that I hade done differently was to start out with
+So one of the tings I wish that I had done differently was to start out with
 the _hello world_ starter pack instead of the default one.
 
 There are a lot of nice things in the default started pack like SEO, Manifest and
@@ -36,7 +36,7 @@ gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
 This is also what they recommend in the official tutorial so maybe I should have read
-that hehe.
+that he he.
 
 ### What It Actually Does
 
@@ -103,7 +103,7 @@ So gatsby has a multitude of _transformers_. What _transformers_ do is to take t
 content that the _source_ plugins load and transform them in some way.
 
 I use [remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/). It is
-a tranformer for markdown (my choise when writing stuff). It takes any markdown available
+a transformer for markdown (my choice when writing stuff). It takes any markdown available
 from the sources and then transforms it in to HTML that can then be queried and displayed.
 
 ### Generating Pages From the Sources
@@ -143,7 +143,7 @@ Gatsby is amazing! There are a lot of plugins and things that you can add. This 
 but most of these plugins are _nice_ to have but in no way required. So starting out with the basic
 _hello world_ starter kit and then adding plugins as you need is probably the best way to get started.
 
-Here is a list of plugins that i currently use, as of writing this post:
+Here is a list of plugins that I currently use, as of writing this post:
 
 - [filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/)
 - [catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/)
