@@ -66,7 +66,6 @@ const IndexPage = ({
 );
 
 IndexPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 

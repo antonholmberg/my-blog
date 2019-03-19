@@ -25,7 +25,6 @@ const Post = ({ data }) => {
 };
 
 Post.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 

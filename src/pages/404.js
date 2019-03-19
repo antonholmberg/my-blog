@@ -62,7 +62,6 @@ const NotFoundPage = ({ data }) => {
 };
 
 NotFoundPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 
