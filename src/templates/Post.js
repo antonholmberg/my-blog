@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Layout from '../components/Layout';
-
-const PostTitle = styled.h2``;
 
 const Post = ({ data }) => {
   const { markdownRemark: post } = data;
@@ -14,12 +11,16 @@ const Post = ({ data }) => {
       <Helmet>
         <title>{post.frontmatter.title}</title>
       </Helmet>
-      <PostTitle>{post.frontmatter.title}</PostTitle>
-      <div
-        className="blog-post-content"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      <article>
+        <header>
+          <h2>{post.frontmatter.title}</h2>
+        </header>
+        <div
+          className="blog-post-content"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </article>
     </Layout>
   );
 };
@@ -35,7 +36,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         path
         title
       }

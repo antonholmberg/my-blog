@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import React from 'react';
 import Img from 'gatsby-image';
 
-const RoundedImage = styled(Img)`
-  border-radius: 4rem;
-`;
+import './RoundedImage.css';
 
-export default RoundedImage;
+export default function RoundedImage({ ...props }) {
+  return <Img {...props} className="rounded-image" />;
+}

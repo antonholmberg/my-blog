@@ -1,0 +1,19 @@
+:root {
+  --accentColor: #b366ff;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  position: relative;
+  min-height: 100vh;
+}
+
+.layout::after {
+  display: block;
+  content: '';
+  height: 6rem;
+}

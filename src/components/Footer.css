@@ -1,0 +1,33 @@
+.footer {
+  background: black;
+  color: white;
+  min-height: 6rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  font-size: 0.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  align-self: flex-start;
+}
+
+.footer__social-media-icon {
+  padding-right: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer__social-media-text {
+  display: inline;
+}

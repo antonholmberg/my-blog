@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
+import classNames from 'classnames';
 
 import Layout from '../components/Layout';
 import RoundedImage from '../components/RoundedImage';
 
+import './404.css';
+
 const fadeTime = 400;
 const showTime = 5000;
-
-const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  opacity: ${props => props.opacity};
-  transition: opacity ease ${fadeTime}ms;
-`;
 
 const NotFoundPage = ({ data }) => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -56,6 +50,10 @@ const NotFoundPage = ({ data }) => {
     };
   }, [imageIndex]);
 
+  const imageContainerClassName = classNames('fourOFour__image-wrapper', {
+    'fourOFour__image-wrapper--hidden': imageOpacity === 0.0,
+  });
+
   return (
     <Layout>
       <h2>NOT FOUND</h2>
@@ -63,12 +61,12 @@ const NotFoundPage = ({ data }) => {
         You just hit a route that doesn&#39;t exist... In the meantime you can
         enjoy some random images of my cats!
       </p>
-      <ImageContainer opacity={imageOpacity}>
+      <section className={imageContainerClassName}>
         <RoundedImage
           fadeIn={false}
           fixed={edges[imageIndex].node.childImageSharp.fixed}
         />
-      </ImageContainer>
+      </section>
     </Layout>
   );
 };

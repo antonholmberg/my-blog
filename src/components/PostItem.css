@@ -1,0 +1,11 @@
+.post-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-top: 0.1rem solid #e6e6e6;
+}
+
+.post-item__title {
+  padding: 0px;
+}

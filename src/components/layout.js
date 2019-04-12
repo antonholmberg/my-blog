@@ -1,23 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
-import CenteredContent from './CenteredContent';
+import ContentWrapper from './ContentWrapper';
 
-const Root = styled.div`
-  position: relative;
-  min-height: 100vh;
-  ::after {
-    display: block;
-    content: '';
-    height: 6rem;
-  }
-`;
+import './Layout.css';
 
 const Layout = ({ children }) => (
-  <Root>
+  <div className="layout">
     <Helmet>
       <link
         rel="stylesheet"
@@ -27,9 +18,11 @@ const Layout = ({ children }) => (
       />
     </Helmet>
     <Header siteTitle="Anton Holmberg" />
-    <CenteredContent>{children}</CenteredContent>
+    <main>
+      <ContentWrapper>{children}</ContentWrapper>
+    </main>
     <Footer />
-  </Root>
+  </div>
 );
 
 Layout.propTypes = {

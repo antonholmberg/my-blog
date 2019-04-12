@@ -1,0 +1,11 @@
+.fourOFour__image-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity ease 400ms;
+}
+
+.fourOFour__image-wrapper--hidden {
+  opacity: 0;
+}

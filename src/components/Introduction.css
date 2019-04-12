@@ -1,0 +1,27 @@
+.introduction {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+@media (min-width: 36em) {
+  .introduction {
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+  }
+}
+
+.introduction__bio {
+  display: flex;
+  flex-direction: column;
+}
+
+.introduction__image-wrapper {
+  margin-right: 1rem;
+}
+
+.introduction__image {
+  border-radius: 50%;
+}

@@ -1,28 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import StyledLink from './StyledLink';
-import theme from '../theme';
+import ContentWrapper from './ContentWrapper';
 
-const HeaderBackground = styled.header`
-  background: ${theme.colors.accentColor};
-  margin-bottom: 1.45rem;
-`;
+import './Header.css';
 
 const Header = ({ siteTitle }) => (
-  <HeaderBackground>
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1rem 1.0875rem',
-      }}
-    >
-      <StyledLink textColor="white" to="/">
+  <header className="header">
+    <ContentWrapper>
+      <StyledLink inverse to="/">
         <h1 style={{ margin: 0 }}>{siteTitle}</h1>
       </StyledLink>
-    </div>
-  </HeaderBackground>
+    </ContentWrapper>
+  </header>
 );
 
 Header.propTypes = {

@@ -28,7 +28,6 @@ module.exports = {
         path: path.join(__dirname, 'images'),
       },
     },
-    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-typography',
       options: {

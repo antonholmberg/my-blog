@@ -1,15 +1,26 @@
-import styled from 'styled-components';
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import './StyledLink.css';
 
-const StyledLink = styled(Link)`
-  text-decoration: underline;
-  color: ${props => props.textColor || '#000'};
-  :visited {
-    color: ${props => props.textColor || '#000'};
-  }
-  :hover {
-    color: ${props => props.textColor || '#000'};
-  }
-`;
+export default function StyledLink({ children, inverse, ...props }) {
+  const className = classNames('styled-link', {
+    'styled-link--inverse': inverse,
+  });
+  return (
+    <Link {...props} className={className}>
+      {children}
+    </Link>
+  );
+}
 
-export default StyledLink;
+StyledLink.propTypes = {
+  children: PropTypes.element,
+  inverse: PropTypes.bool,
+};
+
+StyledLink.defaultProps = {
+  children: [],
+  inverse: false,
+};
