@@ -15,7 +15,7 @@ export default function Introduction({ profilePicture }) {
       </div>
       <article>
         <header>
-          <h4>I am Anton Holmberg</h4>
+          <h4 className="introduction__title">I am Anton Holmberg</h4>
         </header>
         <p>
           I am a software developer mostly into Javascript and Android

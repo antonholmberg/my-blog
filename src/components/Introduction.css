@@ -11,6 +11,10 @@
     align-items: center;
     text-align: start;
   }
+
+  .introduction__image-wrapper {
+    margin-right: 1rem;
+  }
 }
 
 .introduction__bio {
@@ -18,8 +22,12 @@
   flex-direction: column;
 }
 
-.introduction__image-wrapper {
-  margin-right: 1rem;
+.introduction__title {
+  margin-bottom: 1rem;
+}
+
+.introduction__image {
+  margin-bottom: 1rem;
 }
 
 .introduction__image {
