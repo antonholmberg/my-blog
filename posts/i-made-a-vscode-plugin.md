@@ -4,10 +4,9 @@ date: 2019-05-21:17:25.962Z
 title: 'I Made a Visual Studio Code Plugin'
 ---
 
-I recently found [remove.bg](remove.bg) really cool project. My thoughts
-went to what cools stuff I could potentially make with it and I decided to make
-a plugin for vscode that allows you to right click an image and remove the
-background from that image.
+I recently found [remove.bg](remove.bg), a really cool project. So I decided to
+make a plugin for vscode that would allow me to right click an image and remove
+the background from that image.
 
 I have been switching back and forth between vscode and vim a lot lately but one
 of the things that intrigued me with vscode was the fact that plugins were
