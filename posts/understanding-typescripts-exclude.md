@@ -13,7 +13,7 @@ really feel comfortable with at first.
 While reading release notes for TypeScript 2.8 I stumbled across _Omit_. Not
 knowing what it was I set out to understand it. However, the problem grew since
 I found that _Omit_ was defined as a combination of _Pick_ and _Exclude_. I just
-couldn't for the life of me figure out what _Exclue_ did.
+couldn't for the life of me figure out what _Exclude_ did.
 
 Most of the articles I found about _Exclude_ would show an example of how it was
 used in conjunction with another type. It felt like they sort of assumed that
