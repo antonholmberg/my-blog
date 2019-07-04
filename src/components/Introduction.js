@@ -6,14 +6,14 @@ import './Introduction.css';
 
 export default function Introduction({ profilePicture }) {
   return (
-    <section className="introduction">
+    <article className="introduction">
       <div className="introduction__image-wrapper">
         <Img
           className="introduction__image"
           fixed={profilePicture.childImageSharp.fixed}
         />
       </div>
-      <article>
+      <div>
         <header>
           <h4 className="introduction__title">I am Anton Holmberg</h4>
         </header>
@@ -22,8 +22,8 @@ export default function Introduction({ profilePicture }) {
           development. I also know my way around some python script-fu and in my
           spare time I play around with Rust.
         </p>
-      </article>
-    </section>
+      </div>
+    </article>
   );
 }
 
