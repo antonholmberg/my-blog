@@ -2,7 +2,7 @@
 path: '/posts/how-i-made-this-blog'
 date: 2019-03-01T17:12:33.962Z
 title: 'How I Made This Blog'
-description: 'A short article about how this blog was made using Gatsby and it's amazing plugins'
+description: "A short article about how this blog was made using Gatsby and it's amazing plugins"
 ---
 
 This blog was made with [Gatsby.js](https://www.gatsbyjs.org/). Over all it has
