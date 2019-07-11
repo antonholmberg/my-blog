@@ -1,7 +1,7 @@
 import Typography from 'typography';
 import elkGlen from 'typography-theme-elk-glen';
 
-elkGlen.overrideStyles = ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+elkGlen.overrideStyles = () => ({
   h1: {
     color: 'white',
   },
