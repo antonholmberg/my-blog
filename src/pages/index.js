@@ -16,6 +16,10 @@ const IndexPage = ({
   <Layout>
     <Helmet>
       <title>Anton Holmberg</title>
+      <meta
+        name="Description"
+        content="The personal blog for me, Anton Holmberg. Mainly programming stuff, mostly JS"
+      />
     </Helmet>
     <Introduction profilePicture={profilePicture} />
     <section>
