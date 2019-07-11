@@ -8,6 +8,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
@@ -52,7 +58,10 @@ module.exports = {
         start_url: '/',
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        short_name: 'Holmberg',
         display: 'standalone',
+        theme_color: '#b366ff',
+        background_color: '#FFF',
         icon: 'images/profile.jpg', // This path is relative to the root of the site.
         include_favicon: true, // Include favicon
       },

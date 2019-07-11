@@ -10,6 +10,7 @@ const Post = ({ data }) => {
     <Layout>
       <Helmet>
         <title>{post.frontmatter.title}</title>
+        <meta name="Description" content={post.frontmatter.description} />
       </Helmet>
       <article>
         <header>
@@ -38,6 +39,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        description
       }
     }
   }

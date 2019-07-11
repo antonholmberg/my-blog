@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import classNames from 'classnames';
@@ -56,17 +57,25 @@ const NotFoundPage = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Page could not be found</title>
+        <meta
+          name="Description"
+          content="The page you were looking for could not be found but please have a look at some cute cats"
+        />
+      </Helmet>
       <h2>NOT FOUND</h2>
       <p>
         You just hit a route that doesn&#39;t exist... In the meantime you can
         enjoy some random images of my cats!
       </p>
-      <section className={imageContainerClassName}>
+      <div className={imageContainerClassName}>
         <RoundedImage
+          alt="A cat to keep you occupied"
           fadeIn={false}
           fixed={edges[imageIndex].node.childImageSharp.fixed}
         />
-      </section>
+      </div>
     </Layout>
   );
 };

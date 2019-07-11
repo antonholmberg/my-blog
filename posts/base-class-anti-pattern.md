@@ -2,6 +2,7 @@
 path: '/posts/base-class-anti-pattern'
 date: 2019-03-26:12:33.962Z
 title: 'The BaseClass Anti-Pattern'
+description: 'An article about the BaseClass Anti-Pattern; why is is bas and how do i avoid it?'
 ---
 
 As a consultant I get to see a lot of code bases and on Android, by far, the most common

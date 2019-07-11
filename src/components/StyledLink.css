@@ -1,14 +1,14 @@
 .styled-link {
   text-decoration: underline;
-  color: #000;
+  color: var(--accent-color);
 }
 
 .styled-link:hover {
-  color: #000;
+  color: var(--accent-color);
 }
 
 .styled-link:visited {
-  color: #000;
+  color: var(--accent-color);
 }
 
 .styled-link--inverse {

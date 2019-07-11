@@ -2,6 +2,7 @@
 path: '/posts/i-made-a-vscode-plugin'
 date: 2019-05-21:17:25.962Z
 title: 'I Made a Visual Studio Code Plugin'
+description: 'How I made a vscode plugin to replace backgrounds with alpha for images.'
 ---
 
 I recently found [remove.bg](remove.bg). It is a really cool project that

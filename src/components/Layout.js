@@ -16,6 +16,7 @@ const Layout = ({ children }) => (
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossOrigin="anonymous"
       />
+      <meta name="theme-color" content="#b366ff" />
     </Helmet>
     <Header siteTitle="Anton Holmberg" />
     <main>
