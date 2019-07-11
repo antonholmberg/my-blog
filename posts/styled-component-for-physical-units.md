@@ -2,7 +2,7 @@
 path: '/posts/style-components-for physical-units'
 date: 2019-05-23:17:25.962Z
 title: 'Getting Physical Units With Styled Components'
-description: 'Getting percise physical units on the web is no walk in the park but given the right conditions is it possible'
+description: 'Getting percise physical units on the web is no walk in the park but given the right conditions is it possible.'
 ---
 
 Today I came across an interesting problem. I had to draw a React component in the browser and it had to be a specific width and height in centimeters.
