@@ -2,7 +2,7 @@
 path: '/posts/understanding-typescripts-exclude'
 date: 2019-07-4:17:25.962Z
 title: 'Understanding TypeScripts Exclude'
-description: 'Tackling one the more advanced type featues in typescript, Exclude'
+description: 'Tackling one the more advanced type featues in typescript, Exclude.'
 ---
 
 I recently started to do more TypeScript. I have plenty of previous experiences

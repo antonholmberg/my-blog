@@ -27,7 +27,7 @@ const IndexPage = ({
         <PostItem
           title={edge.node.frontmatter.title}
           path={edge.node.frontmatter.path}
-          preview={edge.node.excerpt}
+          preview={edge.node.frontmatter.description}
         />
       ))}
     </section>
@@ -44,8 +44,8 @@ export const pageQuery = graphql`
       edges {
         node {
           html
-          excerpt(pruneLength: 200)
           frontmatter {
+            description
             title
             path
           }

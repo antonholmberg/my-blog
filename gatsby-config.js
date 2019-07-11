@@ -3,10 +3,67 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Anton Holmberg',
-    description: 'The blog for Anton Holmberg',
+    siteUrl: 'https://www.antonholmberg.se/',
+    description:
+      'The personal blog for me, Anton Holmberg. Mainly programming stuff, mostly JS',
     author: '@540grunkspin',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              const createXmlPost = edge => ({
+                ...edge.node.frontmatter,
+                ...{
+                  description: edge.node.frontmatter.description,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                },
+              });
+              return allMarkdownRemark.edges.map(createXmlPost);
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      html
+                      frontmatter {
+                        description
+                        title
+                        date
+                        path
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: "Anton Holmberg's RSS Feed",
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
