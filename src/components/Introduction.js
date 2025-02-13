@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import './Introduction.css';
 
@@ -8,9 +8,10 @@ export default function Introduction({ profilePicture }) {
   return (
     <article className="introduction">
       <div className="introduction__image-wrapper">
-        <Img
+        <StaticImage
           className="introduction__image"
-          fixed={profilePicture.childImageSharp.fixed}
+          layout="constrained"
+          src="../../images/profile.png"
         />
       </div>
       <div>

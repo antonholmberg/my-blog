@@ -21,7 +21,7 @@ const IndexPage = ({
         content="The personal blog for me, Anton Holmberg. Mainly programming stuff, mostly JS"
       />
     </Helmet>
-    <Introduction profilePicture={profilePicture} />
+    <Introduction />
     <section>
       {edges.map(edge => (
         <PostItem
@@ -49,13 +49,6 @@ export const pageQuery = graphql`
             title
             path
           }
-        }
-      }
-    }
-    file(relativePath: { eq: "profile.jpg" }) {
-      childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
         }
       }
     }

@@ -105,9 +105,10 @@ module.exports = {
     },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-offline',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-image',
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
