@@ -6,7 +6,6 @@ import classNames from 'classnames';
 
 import Layout from '../components/Layout';
 
-
 const NotFoundPage = () => {
   return (
     <Layout>

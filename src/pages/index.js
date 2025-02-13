@@ -23,7 +23,7 @@ const IndexPage = ({
     </Helmet>
     <Introduction />
     <section>
-      {edges.map(edge => (
+      {edges.map((edge) => (
         <PostItem
           title={edge.node.frontmatter.title}
           path={edge.node.frontmatter.path}
