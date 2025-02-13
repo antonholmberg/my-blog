@@ -120,7 +120,7 @@ module.exports = {
         display: 'standalone',
         theme_color: '#b366ff',
         background_color: '#FFF',
-        icon: 'images/profile.jpg', // This path is relative to the root of the site.
+        icon: 'images/profile.png', // This path is relative to the root of the site.
         include_favicon: true, // Include favicon
       },
     },
